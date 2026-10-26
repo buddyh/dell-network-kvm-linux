@@ -1,0 +1,2871 @@
+{
+  "messages": {
+    "CommandPing": {
+      "fields": [
+        {
+          "name": "protocolMajorVersion",
+          "number": 1,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "protocolMinorVersion",
+          "number": 2,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "hasCriteria",
+          "number": 3,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "monitorId",
+          "number": 4,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientIdsArray",
+          "number": 5,
+          "type": "string",
+          "repeated": true,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandPong": {
+      "fields": [
+        {
+          "name": "clientId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientName",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clusterId",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clusterName",
+          "number": 4,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isOnline",
+          "number": 5,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isSameMonitor",
+          "number": 6,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "BaseDiscoveryCommand": {
+      "fields": [
+        {
+          "name": "reportTag",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "type",
+          "number": 2,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_BaseDiscoveryCommand_Type_EnumDescriptor"
+        },
+        {
+          "name": "ping",
+          "number": 3,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandPing"
+        },
+        {
+          "name": "pong",
+          "number": 4,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandPong"
+        }
+      ]
+    },
+    "CommandSuccess": {
+      "fields": []
+    },
+    "CommandError": {
+      "fields": [
+        {
+          "name": "error",
+          "number": 1,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_ErrorType_EnumDescriptor"
+        },
+        {
+          "name": "message",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "activeIpAddress",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "ClusterData": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clusterName",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientJoinedSequenceArray",
+          "number": 3,
+          "type": "string",
+          "repeated": true,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientArrangementArray",
+          "number": 4,
+          "type": "string",
+          "repeated": true,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "contentTransferEnabled",
+          "number": 5,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "autoConnect",
+          "number": 6,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "timestamp",
+          "number": 7,
+          "type": "int64",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "ClusterState": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "setup",
+          "number": 3,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_SetupType_EnumDescriptor"
+        },
+        {
+          "name": "clientsArray",
+          "number": 4,
+          "type": "message",
+          "repeated": true,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClientInfo"
+        },
+        {
+          "name": "activeClientId",
+          "number": 5,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "activeTerm",
+          "number": 6,
+          "type": "uint64",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "hotkeysArray",
+          "number": 7,
+          "type": "message",
+          "repeated": true,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_HotkeyInfo"
+        },
+        {
+          "name": "isSingleDisplaySetupAllowed",
+          "number": 8,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "ClientInfo": {
+      "fields": [
+        {
+          "name": "clientId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientName",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "ipAddress",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "os",
+          "number": 4,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "protocolMajorVersion",
+          "number": 5,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "protocolMinorVersion",
+          "number": 6,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "monitorSource",
+          "number": 7,
+          "type": "int32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "monitorAmount",
+          "number": 9,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isOnline",
+          "number": 10,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "monitorWindowsArray",
+          "number": 11,
+          "type": "int32",
+          "repeated": true,
+          "packed": true,
+          "specific": null
+        },
+        {
+          "name": "autoConnectFeature",
+          "number": 12,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "contentTransferFeature",
+          "number": 13,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "systemClientId",
+          "number": 14,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientFlag",
+          "number": 15,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClientFlag"
+        },
+        {
+          "name": "monitorId",
+          "number": 16,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "supportedMonitorCount",
+          "number": 17,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isDdcciConnected",
+          "number": 18,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "screenRotation",
+          "number": 19,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_ClientInfo_ScreenRotation_EnumDescriptor"
+        },
+        {
+          "name": "isSmoothMouseEnabled",
+          "number": 20,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "ClientFlag": {
+      "fields": [
+        {
+          "name": "isSystemMode",
+          "number": 1,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isLockScreen",
+          "number": 2,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandHello": {
+      "fields": [
+        {
+          "name": "clientId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "protocolMajorVersion",
+          "number": 2,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "protocolMinorVersion",
+          "number": 3,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "resumeClusterId",
+          "number": 4,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "resumeClusterTimestamp",
+          "number": 5,
+          "type": "int64",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandHelloResponse": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "protocolMajorVersion",
+          "number": 3,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "protocolMinorVersion",
+          "number": 4,
+          "type": "uint32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isActive",
+          "number": 5,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "activeIp",
+          "number": 6,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isOnline",
+          "number": 7,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandJoin": {
+      "fields": [
+        {
+          "name": "setup",
+          "number": 1,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_SetupType_EnumDescriptor"
+        },
+        {
+          "name": "monitorId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "client",
+          "number": 3,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClientInfo"
+        },
+        {
+          "name": "requestActive",
+          "number": 4,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "resumeClusterId",
+          "number": 5,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "resumeClusterTimestamp",
+          "number": 7,
+          "type": "int64",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandJoinResponse": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clusterState",
+          "number": 3,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClusterState"
+        },
+        {
+          "name": "clusterData",
+          "number": 4,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClusterData"
+        }
+      ]
+    },
+    "CommandInvite": {
+      "fields": [
+        {
+          "name": "setup",
+          "number": 1,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_SetupType_EnumDescriptor"
+        },
+        {
+          "name": "monitorId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientId",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "offlineOnly",
+          "number": 4,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "systemIdsArray",
+          "number": 5,
+          "type": "string",
+          "repeated": true,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientIdsArray",
+          "number": 6,
+          "type": "string",
+          "repeated": true,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSyncFull": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clusterState",
+          "number": 2,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClusterState"
+        },
+        {
+          "name": "clusterData",
+          "number": 3,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClusterData"
+        }
+      ]
+    },
+    "CommandSyncState": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clusterState",
+          "number": 2,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClusterState"
+        }
+      ]
+    },
+    "CommandSyncData": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clusterData",
+          "number": 2,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ClusterData"
+        }
+      ]
+    },
+    "CommandStartDirect": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "setup",
+          "number": 3,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_SetupType_EnumDescriptor"
+        },
+        {
+          "name": "monitorId",
+          "number": 4,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSetActive": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "fromClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "toClientId",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "reason",
+          "number": 4,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_CommandSetActive_ActiveReason_EnumDescriptor"
+        },
+        {
+          "name": "startPercentX",
+          "number": 5,
+          "type": "float",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "startPercentY",
+          "number": 6,
+          "type": "float",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "term",
+          "number": 7,
+          "type": "uint64",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isSmoothMouse",
+          "number": 8,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandGetMonitorWindow": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandGetMonitorWindowResponse": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "clientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "positionsArray",
+          "number": 4,
+          "type": "int32",
+          "repeated": true,
+          "packed": true,
+          "specific": null
+        }
+      ]
+    },
+    "CommandUpdatePbpPositions": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "inputSourcesArray",
+          "number": 2,
+          "type": "int32",
+          "repeated": true,
+          "packed": true,
+          "specific": null
+        }
+      ]
+    },
+    "CommandUpdatePbpMode": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "pbpMode",
+          "number": 2,
+          "type": "int32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandAlive": {
+      "fields": []
+    },
+    "CommandNotifyUnreachable": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "unreachableClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandDisconnect": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "disconnectClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "reason",
+          "number": 3,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_CommandDisconnect_DisconnectReason_EnumDescriptor"
+        },
+        {
+          "name": "sourceClientId",
+          "number": 4,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandIdentify": {
+      "fields": []
+    },
+    "CommandLeave": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "leaveClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandKeyboard": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "type",
+          "number": 2,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_CommandKeyboard_SubType_EnumDescriptor"
+        },
+        {
+          "name": "vkCode",
+          "number": 3,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_VirtualKey_EnumDescriptor"
+        }
+      ]
+    },
+    "CommandMouse": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "type",
+          "number": 2,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_CommandMouse_SubType_EnumDescriptor"
+        },
+        {
+          "name": "dx",
+          "number": 3,
+          "type": "int32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "dy",
+          "number": 4,
+          "type": "int32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "delta",
+          "number": 5,
+          "type": "int32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "ContentTransferData": {
+      "fields": [
+        {
+          "name": "sourceClientId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "plainText",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "rtfText",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "pngImage",
+          "number": 4,
+          "type": "bytes",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "filesArray",
+          "number": 6,
+          "type": "message",
+          "repeated": true,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ContentTransferFile"
+        }
+      ]
+    },
+    "ContentTransferFile": {
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "sourcePath",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isDirectory",
+          "number": 3,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSyncClipboard": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "content",
+          "number": 2,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ContentTransferData"
+        }
+      ]
+    },
+    "CommandStartDrag": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "content",
+          "number": 2,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_ContentTransferData"
+        }
+      ]
+    },
+    "CommandDownload": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "destClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "sourceFilePath",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandDownloadResponse": {
+      "fields": [
+        {
+          "name": "fileData",
+          "number": 1,
+          "type": "bytes",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSshCopyId": {
+      "fields": [
+        {
+          "name": "sourceIdentities",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "sourceClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "requestRelay",
+          "number": 3,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSshCopyIdResponse": {
+      "fields": [
+        {
+          "name": "destIdentities",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSshKeyScan": {
+      "fields": [
+        {
+          "name": "sourceKnownHosts",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "sourceClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "requestScanAll",
+          "number": 3,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSshKeyScanResponse": {
+      "fields": [
+        {
+          "name": "destKnownHosts",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandNotifyError": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "sourceClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "error",
+          "number": 3,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_ErrorType_EnumDescriptor"
+        }
+      ]
+    },
+    "HotkeyInfo": {
+      "fields": [
+        {
+          "name": "hotkeyFunc",
+          "number": 1,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_HotkeyInfo_HotkeyFuncTable_EnumDescriptor"
+        },
+        {
+          "name": "vkCode",
+          "number": 2,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_VirtualKey_EnumDescriptor"
+        },
+        {
+          "name": "isControl",
+          "number": 3,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isAlt",
+          "number": 4,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "isShift",
+          "number": 5,
+          "type": "bool",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "timestamp",
+          "number": 6,
+          "type": "int32",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "CommandSyncHotkey": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "sourceClientId",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "hotkeysArray",
+          "number": 3,
+          "type": "message",
+          "repeated": true,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_HotkeyInfo"
+        }
+      ]
+    },
+    "CommandNotify": {
+      "fields": [
+        {
+          "name": "clusterId",
+          "number": 1,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "notificationKey",
+          "number": 2,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "sourceClientId",
+          "number": 3,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "extraInfo",
+          "number": 4,
+          "type": "string",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        }
+      ]
+    },
+    "BaseClusterCommand": {
+      "fields": [
+        {
+          "name": "id_p",
+          "number": 1,
+          "type": "uint64",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "correlationId",
+          "number": 2,
+          "type": "uint64",
+          "repeated": false,
+          "packed": false,
+          "specific": null
+        },
+        {
+          "name": "type",
+          "number": 3,
+          "type": "enum",
+          "repeated": false,
+          "packed": false,
+          "specific": "_BaseClusterCommand_Type_EnumDescriptor"
+        },
+        {
+          "name": "success",
+          "number": 4,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSuccess"
+        },
+        {
+          "name": "error",
+          "number": 5,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandError"
+        },
+        {
+          "name": "hello",
+          "number": 6,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandHello"
+        },
+        {
+          "name": "helloResponse",
+          "number": 7,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandHelloResponse"
+        },
+        {
+          "name": "join",
+          "number": 8,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandJoin"
+        },
+        {
+          "name": "joinResponse",
+          "number": 9,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandJoinResponse"
+        },
+        {
+          "name": "invite",
+          "number": 10,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandInvite"
+        },
+        {
+          "name": "syncFull",
+          "number": 11,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSyncFull"
+        },
+        {
+          "name": "startDirect",
+          "number": 12,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandStartDirect"
+        },
+        {
+          "name": "setActive",
+          "number": 15,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSetActive"
+        },
+        {
+          "name": "getMonitorWindow",
+          "number": 16,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandGetMonitorWindow"
+        },
+        {
+          "name": "getMonitorWindowResponse",
+          "number": 17,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandGetMonitorWindowResponse"
+        },
+        {
+          "name": "alive",
+          "number": 19,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandAlive"
+        },
+        {
+          "name": "notifyUnreachable",
+          "number": 20,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandNotifyUnreachable"
+        },
+        {
+          "name": "disconnect",
+          "number": 21,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandDisconnect"
+        },
+        {
+          "name": "leave",
+          "number": 22,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandLeave"
+        },
+        {
+          "name": "keyboard",
+          "number": 23,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandKeyboard"
+        },
+        {
+          "name": "mouse",
+          "number": 24,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandMouse"
+        },
+        {
+          "name": "syncClipboard",
+          "number": 25,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSyncClipboard"
+        },
+        {
+          "name": "startDrag",
+          "number": 26,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandStartDrag"
+        },
+        {
+          "name": "download",
+          "number": 27,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandDownload"
+        },
+        {
+          "name": "downloadResponse",
+          "number": 28,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandDownloadResponse"
+        },
+        {
+          "name": "sshCopyId",
+          "number": 29,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSshCopyId"
+        },
+        {
+          "name": "sshCopyIdResponse",
+          "number": 30,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSshCopyIdResponse"
+        },
+        {
+          "name": "sshKeyScan",
+          "number": 31,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSshKeyScan"
+        },
+        {
+          "name": "sshKeyScanResponse",
+          "number": 32,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSshKeyScanResponse"
+        },
+        {
+          "name": "identfy",
+          "number": 33,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandIdentify"
+        },
+        {
+          "name": "updatePbpPositions",
+          "number": 34,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandUpdatePbpPositions"
+        },
+        {
+          "name": "updatePbpMode",
+          "number": 35,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandUpdatePbpMode"
+        },
+        {
+          "name": "notifyError",
+          "number": 36,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandNotifyError"
+        },
+        {
+          "name": "syncState",
+          "number": 37,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSyncState"
+        },
+        {
+          "name": "syncData",
+          "number": 38,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSyncData"
+        },
+        {
+          "name": "syncHotkey",
+          "number": 39,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandSyncHotkey"
+        },
+        {
+          "name": "notify",
+          "number": 40,
+          "type": "message",
+          "repeated": false,
+          "packed": false,
+          "specific": "_OBJC_CLASS_$_CommandNotify"
+        }
+      ]
+    }
+  },
+  "enums": {
+    "BaseDiscoveryCommand_Type_EnumDescriptor": [
+      {
+        "name": "Invalid",
+        "value": 0
+      },
+      {
+        "name": "Ping",
+        "value": 1
+      },
+      {
+        "name": "Pong",
+        "value": 2
+      }
+    ],
+    "ErrorType_EnumDescriptor": [
+      {
+        "name": "UnknownError",
+        "value": 0
+      },
+      {
+        "name": "BadProtocol",
+        "value": 1
+      },
+      {
+        "name": "NotActiveClient",
+        "value": 2
+      },
+      {
+        "name": "ClusterFull",
+        "value": 3
+      },
+      {
+        "name": "DifferentSetup",
+        "value": 4
+      },
+      {
+        "name": "DifferentMonitor",
+        "value": 5
+      },
+      {
+        "name": "ClientNotOffline",
+        "value": 6
+      },
+      {
+        "name": "WrongCluster",
+        "value": 7
+      },
+      {
+        "name": "NotInactiveClient",
+        "value": 8
+      },
+      {
+        "name": "ClientNotExist",
+        "value": 9
+      },
+      {
+        "name": "ClientOffline",
+        "value": 10
+      },
+      {
+        "name": "AlreadyConnected",
+        "value": 11
+      },
+      {
+        "name": "InvalidClusterName",
+        "value": 12
+      },
+      {
+        "name": "OldTerm",
+        "value": 13
+      },
+      {
+        "name": "InvalidArrangement",
+        "value": 14
+      },
+      {
+        "name": "IncompatibleProcotol",
+        "value": 15
+      },
+      {
+        "name": "HasUnknownClient",
+        "value": 16
+      },
+      {
+        "name": "SingleDisplayUnsupported",
+        "value": 17
+      },
+      {
+        "name": "UniversalControlIsActive",
+        "value": 18
+      },
+      {
+        "name": "ClipboardDataExceededMaxSize",
+        "value": 19
+      },
+      {
+        "name": "DuplicateSystemId",
+        "value": 20
+      }
+    ],
+    "SetupType_EnumDescriptor": [
+      {
+        "name": "Invalid",
+        "value": 0
+      },
+      {
+        "name": "Offline",
+        "value": 1
+      },
+      {
+        "name": "SingleDisplay",
+        "value": 2
+      },
+      {
+        "name": "Pbp",
+        "value": 3
+      },
+      {
+        "name": "MultipleDisplays",
+        "value": 4
+      }
+    ],
+    "MonitorRotation_EnumDescriptor": [
+      {
+        "name": "None",
+        "value": 0
+      },
+      {
+        "name": "Rotate0",
+        "value": 1
+      },
+      {
+        "name": "Rotate90",
+        "value": 2
+      },
+      {
+        "name": "Rotate180",
+        "value": 3
+      },
+      {
+        "name": "Rotate270",
+        "value": 4
+      },
+      {
+        "name": "RotateNegative90",
+        "value": 4
+      },
+      {
+        "name": "RotateNegative180",
+        "value": 3
+      },
+      {
+        "name": "RotateNegative270",
+        "value": 2
+      }
+    ],
+    "VirtualKey_EnumDescriptor": [
+      {
+        "name": "InvalidKey",
+        "value": 0
+      },
+      {
+        "name": "AnsiA",
+        "value": 1
+      },
+      {
+        "name": "AnsiS",
+        "value": 2
+      },
+      {
+        "name": "AnsiD",
+        "value": 3
+      },
+      {
+        "name": "AnsiF",
+        "value": 4
+      },
+      {
+        "name": "AnsiH",
+        "value": 5
+      },
+      {
+        "name": "AnsiG",
+        "value": 6
+      },
+      {
+        "name": "AnsiZ",
+        "value": 7
+      },
+      {
+        "name": "AnsiX",
+        "value": 8
+      },
+      {
+        "name": "AnsiC",
+        "value": 9
+      },
+      {
+        "name": "AnsiV",
+        "value": 10
+      },
+      {
+        "name": "AnsiB",
+        "value": 11
+      },
+      {
+        "name": "AnsiQ",
+        "value": 12
+      },
+      {
+        "name": "AnsiW",
+        "value": 13
+      },
+      {
+        "name": "AnsiE",
+        "value": 14
+      },
+      {
+        "name": "AnsiR",
+        "value": 15
+      },
+      {
+        "name": "AnsiY",
+        "value": 16
+      },
+      {
+        "name": "AnsiT",
+        "value": 17
+      },
+      {
+        "name": "Ansi1",
+        "value": 18
+      },
+      {
+        "name": "Ansi2",
+        "value": 19
+      },
+      {
+        "name": "Ansi3",
+        "value": 20
+      },
+      {
+        "name": "Ansi4",
+        "value": 21
+      },
+      {
+        "name": "Ansi6",
+        "value": 22
+      },
+      {
+        "name": "Ansi5",
+        "value": 23
+      },
+      {
+        "name": "AnsiEqual",
+        "value": 24
+      },
+      {
+        "name": "Ansi9",
+        "value": 25
+      },
+      {
+        "name": "Ansi7",
+        "value": 26
+      },
+      {
+        "name": "AnsiMinus",
+        "value": 27
+      },
+      {
+        "name": "Ansi8",
+        "value": 28
+      },
+      {
+        "name": "Ansi0",
+        "value": 29
+      },
+      {
+        "name": "AnsiRightBracket",
+        "value": 30
+      },
+      {
+        "name": "AnsiO",
+        "value": 31
+      },
+      {
+        "name": "AnsiU",
+        "value": 32
+      },
+      {
+        "name": "AnsiLeftBracket",
+        "value": 33
+      },
+      {
+        "name": "AnsiI",
+        "value": 34
+      },
+      {
+        "name": "AnsiP",
+        "value": 35
+      },
+      {
+        "name": "AnsiL",
+        "value": 36
+      },
+      {
+        "name": "AnsiJ",
+        "value": 37
+      },
+      {
+        "name": "AnsiQuote",
+        "value": 38
+      },
+      {
+        "name": "AnsiK",
+        "value": 39
+      },
+      {
+        "name": "AnsiSemicolon",
+        "value": 40
+      },
+      {
+        "name": "AnsiBackslash",
+        "value": 41
+      },
+      {
+        "name": "AnsiComma",
+        "value": 42
+      },
+      {
+        "name": "AnsiSlash",
+        "value": 43
+      },
+      {
+        "name": "AnsiN",
+        "value": 44
+      },
+      {
+        "name": "AnsiM",
+        "value": 45
+      },
+      {
+        "name": "AnsiPeriod",
+        "value": 46
+      },
+      {
+        "name": "AnsiGrave",
+        "value": 47
+      },
+      {
+        "name": "AnsiKeypadDecimal",
+        "value": 48
+      },
+      {
+        "name": "AnsiKeypadMultiply",
+        "value": 49
+      },
+      {
+        "name": "AnsiKeypadPlus",
+        "value": 50
+      },
+      {
+        "name": "AnsiKeypadClear",
+        "value": 51
+      },
+      {
+        "name": "AnsiKeypadDivide",
+        "value": 52
+      },
+      {
+        "name": "AnsiKeypadEnter",
+        "value": 53
+      },
+      {
+        "name": "AnsiKeypadMinus",
+        "value": 54
+      },
+      {
+        "name": "AnsiKeypadEquals",
+        "value": 55
+      },
+      {
+        "name": "AnsiKeypad0",
+        "value": 56
+      },
+      {
+        "name": "AnsiKeypad1",
+        "value": 57
+      },
+      {
+        "name": "AnsiKeypad2",
+        "value": 58
+      },
+      {
+        "name": "AnsiKeypad3",
+        "value": 59
+      },
+      {
+        "name": "AnsiKeypad4",
+        "value": 60
+      },
+      {
+        "name": "AnsiKeypad5",
+        "value": 61
+      },
+      {
+        "name": "AnsiKeypad6",
+        "value": 62
+      },
+      {
+        "name": "AnsiKeypad7",
+        "value": 63
+      },
+      {
+        "name": "AnsiKeypad8",
+        "value": 64
+      },
+      {
+        "name": "AnsiKeypad9",
+        "value": 65
+      },
+      {
+        "name": "Return",
+        "value": 66
+      },
+      {
+        "name": "Tab",
+        "value": 67
+      },
+      {
+        "name": "Space",
+        "value": 68
+      },
+      {
+        "name": "BackwardDelete",
+        "value": 69
+      },
+      {
+        "name": "Escape",
+        "value": 70
+      },
+      {
+        "name": "CapsLock",
+        "value": 71
+      },
+      {
+        "name": "LeftCommand",
+        "value": 72
+      },
+      {
+        "name": "LeftShift",
+        "value": 73
+      },
+      {
+        "name": "LeftOption",
+        "value": 74
+      },
+      {
+        "name": "LeftControl",
+        "value": 75
+      },
+      {
+        "name": "RightCommand",
+        "value": 76
+      },
+      {
+        "name": "RightShift",
+        "value": 77
+      },
+      {
+        "name": "RightOption",
+        "value": 78
+      },
+      {
+        "name": "RightControl",
+        "value": 79
+      },
+      {
+        "name": "Home",
+        "value": 80
+      },
+      {
+        "name": "PageUp",
+        "value": 81
+      },
+      {
+        "name": "ForwardDelete",
+        "value": 82
+      },
+      {
+        "name": "End",
+        "value": 83
+      },
+      {
+        "name": "PageDown",
+        "value": 84
+      },
+      {
+        "name": "LeftArrow",
+        "value": 85
+      },
+      {
+        "name": "RightArrow",
+        "value": 86
+      },
+      {
+        "name": "DownArrow",
+        "value": 87
+      },
+      {
+        "name": "UpArrow",
+        "value": 88
+      },
+      {
+        "name": "LeftWin",
+        "value": 90
+      },
+      {
+        "name": "RightWin",
+        "value": 91
+      },
+      {
+        "name": "NumLock",
+        "value": 92
+      },
+      {
+        "name": "Backspace",
+        "value": 93
+      },
+      {
+        "name": "Apps",
+        "value": 94
+      },
+      {
+        "name": "Insert",
+        "value": 95
+      },
+      {
+        "name": "F1",
+        "value": 96
+      },
+      {
+        "name": "F2",
+        "value": 97
+      },
+      {
+        "name": "F3",
+        "value": 98
+      },
+      {
+        "name": "F4",
+        "value": 99
+      },
+      {
+        "name": "F5",
+        "value": 100
+      },
+      {
+        "name": "F6",
+        "value": 101
+      },
+      {
+        "name": "F7",
+        "value": 102
+      },
+      {
+        "name": "F8",
+        "value": 103
+      },
+      {
+        "name": "F9",
+        "value": 104
+      },
+      {
+        "name": "F10",
+        "value": 105
+      },
+      {
+        "name": "F11",
+        "value": 106
+      },
+      {
+        "name": "F12",
+        "value": 107
+      },
+      {
+        "name": "KanaMode",
+        "value": 108
+      },
+      {
+        "name": "HanjaMode",
+        "value": 109
+      },
+      {
+        "name": "PrintScreen",
+        "value": 110
+      },
+      {
+        "name": "Sleep",
+        "value": 111
+      },
+      {
+        "name": "BrowserBack",
+        "value": 112
+      },
+      {
+        "name": "BrowserForward",
+        "value": 113
+      },
+      {
+        "name": "BrowserRefresh",
+        "value": 114
+      },
+      {
+        "name": "BrowserStop",
+        "value": 115
+      },
+      {
+        "name": "BrowserSearch",
+        "value": 116
+      },
+      {
+        "name": "BrowserFavorites",
+        "value": 117
+      },
+      {
+        "name": "BrowserHome",
+        "value": 118
+      },
+      {
+        "name": "VolumeMute",
+        "value": 119
+      },
+      {
+        "name": "VolumeDown",
+        "value": 120
+      },
+      {
+        "name": "VolumeUp",
+        "value": 121
+      },
+      {
+        "name": "MediaNextTrack",
+        "value": 122
+      },
+      {
+        "name": "MediaPreviousTrack",
+        "value": 123
+      },
+      {
+        "name": "MediaStop",
+        "value": 124
+      },
+      {
+        "name": "MediaPlayPause",
+        "value": 125
+      },
+      {
+        "name": "LaunchMail",
+        "value": 126
+      },
+      {
+        "name": "SelectMedia",
+        "value": 127
+      },
+      {
+        "name": "LaunchApplication1",
+        "value": 128
+      },
+      {
+        "name": "LaunchApplication2",
+        "value": 129
+      },
+      {
+        "name": "BrightnessDown",
+        "value": 130
+      },
+      {
+        "name": "BrightnessUp",
+        "value": 131
+      },
+      {
+        "name": "MediaFastForward",
+        "value": 132
+      },
+      {
+        "name": "MediaRewind",
+        "value": 133
+      },
+      {
+        "name": "MissionControl",
+        "value": 134
+      },
+      {
+        "name": "SpotlightSearch",
+        "value": 135
+      },
+      {
+        "name": "Dictation",
+        "value": 136
+      },
+      {
+        "name": "FocusMode",
+        "value": 137
+      },
+      {
+        "name": "LaunchPad",
+        "value": 138
+      },
+      {
+        "name": "Function",
+        "value": 139
+      },
+      {
+        "name": "MacJisKana",
+        "value": 140
+      },
+      {
+        "name": "MacJisEisu",
+        "value": 141
+      },
+      {
+        "name": "MacJisYen",
+        "value": 142
+      },
+      {
+        "name": "MacJisUndercore",
+        "value": 143
+      },
+      {
+        "name": "MacJisKeyPadComma",
+        "value": 144
+      },
+      {
+        "name": "Imeconvert",
+        "value": 145
+      },
+      {
+        "name": "Imenonconvert",
+        "value": 146
+      },
+      {
+        "name": "Imemodechange",
+        "value": 147
+      },
+      {
+        "name": "F13",
+        "value": 148
+      },
+      {
+        "name": "F14",
+        "value": 149
+      },
+      {
+        "name": "F15",
+        "value": 150
+      },
+      {
+        "name": "F16",
+        "value": 151
+      },
+      {
+        "name": "F17",
+        "value": 152
+      },
+      {
+        "name": "F18",
+        "value": 153
+      },
+      {
+        "name": "F19",
+        "value": 154
+      },
+      {
+        "name": "F20",
+        "value": 155
+      },
+      {
+        "name": "F21",
+        "value": 156
+      },
+      {
+        "name": "F22",
+        "value": 157
+      },
+      {
+        "name": "F23",
+        "value": 158
+      },
+      {
+        "name": "F24",
+        "value": 159
+      }
+    ],
+    "ClientInfo_ScreenRotation_EnumDescriptor": [
+      {
+        "name": "None",
+        "value": 0
+      },
+      {
+        "name": "Landscape",
+        "value": 1
+      },
+      {
+        "name": "Portrait",
+        "value": 2
+      },
+      {
+        "name": "LandscapeFlipped",
+        "value": 3
+      },
+      {
+        "name": "PortraitFlipped",
+        "value": 4
+      },
+      {
+        "name": "Rotate0",
+        "value": 1
+      },
+      {
+        "name": "Rotate90",
+        "value": 2
+      },
+      {
+        "name": "Rotate180",
+        "value": 3
+      },
+      {
+        "name": "Rotate270",
+        "value": 4
+      }
+    ],
+    "CommandSetActive_ActiveReason_EnumDescriptor": [
+      {
+        "name": "Invalid",
+        "value": 0
+      },
+      {
+        "name": "Hotkey",
+        "value": 1
+      },
+      {
+        "name": "Disconnect",
+        "value": 2
+      },
+      {
+        "name": "MouseCrossing",
+        "value": 3
+      },
+      {
+        "name": "JoinRequest",
+        "value": 4
+      },
+      {
+        "name": "ChangeSource",
+        "value": 5
+      }
+    ],
+    "CommandDisconnect_DisconnectReason_EnumDescriptor": [
+      {
+        "name": "Invalid",
+        "value": 0
+      },
+      {
+        "name": "NetworkUnreachable",
+        "value": 1
+      },
+      {
+        "name": "UserRequest",
+        "value": 2
+      }
+    ],
+    "CommandKeyboard_SubType_EnumDescriptor": [
+      {
+        "name": "Invalid",
+        "value": 0
+      },
+      {
+        "name": "Keydown",
+        "value": 1
+      },
+      {
+        "name": "Keyup",
+        "value": 2
+      }
+    ],
+    "CommandMouse_SubType_EnumDescriptor": [
+      {
+        "name": "Invalid",
+        "value": 0
+      },
+      {
+        "name": "Move",
+        "value": 1
+      },
+      {
+        "name": "LeftDown",
+        "value": 2
+      },
+      {
+        "name": "LeftUp",
+        "value": 3
+      },
+      {
+        "name": "RightDown",
+        "value": 4
+      },
+      {
+        "name": "RightUp",
+        "value": 5
+      },
+      {
+        "name": "MiddleDown",
+        "value": 6
+      },
+      {
+        "name": "MiddleUp",
+        "value": 7
+      },
+      {
+        "name": "Wheel",
+        "value": 8
+      }
+    ],
+    "HotkeyInfo_HotkeyFuncTable_EnumDescriptor": [
+      {
+        "name": "None",
+        "value": 0
+      },
+      {
+        "name": "UsbkvmtoggleInputSource",
+        "value": 5
+      },
+      {
+        "name": "KvmrestoreMouseCursor",
+        "value": 19
+      }
+    ],
+    "BaseClusterCommand_Type_EnumDescriptor": [
+      {
+        "name": "Invalid",
+        "value": 0
+      },
+      {
+        "name": "Success",
+        "value": 2
+      },
+      {
+        "name": "Error",
+        "value": 3
+      },
+      {
+        "name": "Hello",
+        "value": 4
+      },
+      {
+        "name": "HelloResponse",
+        "value": 5
+      },
+      {
+        "name": "Join",
+        "value": 6
+      },
+      {
+        "name": "JoinResponse",
+        "value": 7
+      },
+      {
+        "name": "Invite",
+        "value": 8
+      },
+      {
+        "name": "SyncFull",
+        "value": 9
+      },
+      {
+        "name": "StartDirect",
+        "value": 10
+      },
+      {
+        "name": "SetActive",
+        "value": 13
+      },
+      {
+        "name": "GetMonitorWindow",
+        "value": 14
+      },
+      {
+        "name": "GetMonitorWindowResponse",
+        "value": 15
+      },
+      {
+        "name": "Alive",
+        "value": 17
+      },
+      {
+        "name": "NotifyUnreachable",
+        "value": 18
+      },
+      {
+        "name": "Disconnect",
+        "value": 19
+      },
+      {
+        "name": "Leave",
+        "value": 20
+      },
+      {
+        "name": "Keyboard",
+        "value": 21
+      },
+      {
+        "name": "Mouse",
+        "value": 22
+      },
+      {
+        "name": "SyncClipboard",
+        "value": 23
+      },
+      {
+        "name": "StartDrag",
+        "value": 24
+      },
+      {
+        "name": "Download",
+        "value": 25
+      },
+      {
+        "name": "DownloadResponse",
+        "value": 26
+      },
+      {
+        "name": "SshCopyId",
+        "value": 27
+      },
+      {
+        "name": "SshCopyIdResponse",
+        "value": 28
+      },
+      {
+        "name": "SshKeyScan",
+        "value": 29
+      },
+      {
+        "name": "SshKeyScanResponse",
+        "value": 30
+      },
+      {
+        "name": "Identify",
+        "value": 31
+      },
+      {
+        "name": "UpdatePbpPositions",
+        "value": 32
+      },
+      {
+        "name": "UpdatePbpMode",
+        "value": 33
+      },
+      {
+        "name": "NotifyError",
+        "value": 34
+      },
+      {
+        "name": "SyncData",
+        "value": 35
+      },
+      {
+        "name": "SyncState",
+        "value": 36
+      },
+      {
+        "name": "SyncHotkey",
+        "value": 37
+      },
+      {
+        "name": "Notify",
+        "value": 38
+      }
+    ]
+  }
+}
